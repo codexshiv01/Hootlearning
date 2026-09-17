@@ -32,14 +32,21 @@ test.describe('Admin Flow', () => {
   });
 
   test('admin can create a new student user', async ({ page }) => {
+    const studentUser = process.env.VITE_TEST_STUDENT_USER;
+    const studentPass = process.env.VITE_TEST_STUDENT_PASSWORD;
+    
+    if (!studentUser || !studentPass) {
+      throw new Error("Missing VITE_TEST_STUDENT_USER or VITE_TEST_STUDENT_PASSWORD in environment variables");
+    }
+
     await page.click('button:has-text("Manage Users")');
     
-    await page.fill('input[placeholder="student@school.com"]', 'e2e_student@hoot.com');
-    await page.fill('input[placeholder="Secure Password"]', 'e2e_pass');
+    await page.fill('input[placeholder="student@school.com"]', studentUser);
+    await page.fill('input[placeholder="Secure Password"]', studentPass);
     await page.selectOption('select', { label: '1 Month' });
     await page.click('button:has-text("Grant Access")');
 
     // Wait for the user to appear in the table
-    await expect(page.getByText('e2e_student@hoot.com')).toBeVisible();
+    await expect(page.getByText(studentUser)).toBeVisible();
   });
 });
