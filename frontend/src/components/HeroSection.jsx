@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sun, Leaf } from 'lucide-react';
 import { motion } from 'framer-motion';
+import heroImage from '../assets/image.png';
 import './HeroSection.css';
 
 const fadeUp = {
@@ -64,7 +65,7 @@ const HeroSection = () => {
             <div className="blob-bg"></div>
             
             {/* The main image */}
-            <img src="/src/assets/image.png" alt="Curious child" className="hero-main-img" />
+            <img src={heroImage} alt="Curious child" className="hero-main-img" />
 
             {/* Decorative elements */}
             <div className="deco-sun">
