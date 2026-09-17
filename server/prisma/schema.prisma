@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  expiresAt DateTime
+  firstName String?
+  lastName  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  slug          String   @id
+  name          String
+  icon          String   @default("Folder")
+  allowDownload Boolean  @default(false)
+  folders       Folder[]
+  // loose relationship to resources to avoid wiping existing DB data
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Folder {
+  id           String     @id @default(cuid())
+  name         String
+  categorySlug String
+  category     Category   @relation(fields: [categorySlug], references: [slug], onDelete: Cascade)
+  resources    Resource[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model Resource {
+  id         String   @id @default(cuid())
+  title      String
+  
+  category   String   // Matches Category.slug logically
+  
+  folderId   String?
+  folder     Folder?  @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  
+  actionType String
+  cover      String
+  fileUrl    String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}

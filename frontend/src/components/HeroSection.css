@@ -1,0 +1,255 @@
+.hero-container {
+  padding: 60px 40px;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Left Column Styling */
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e6f6f4;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.badge-highlight {
+  color: #0f766e;
+}
+
+.badge-divider {
+  margin: 0 8px;
+  color: #94a3b8;
+}
+
+.badge-text {
+  color: #0f766e;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.h-blue { color: #3b82f6; }
+.o-yellow { color: #f59e0b; }
+.o-red { color: #ef4444; }
+.t-teal { color: #14b8a6; }
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 90%;
+}
+
+.hero-btn {
+  background-color: #5d63b4;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #4b5092;
+  transform: translateY(-2px);
+}
+
+/* Right Column & Graphics */
+.hero-image-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+}
+
+.blob-bg {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 110%;
+  height: 110%;
+  background: #fdf2d0;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  z-index: 0;
+}
+
+.hero-main-img {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px; /* Slightly rounded edges instead of fully cutout if it has background, or matches the blob */
+  mask-image: radial-gradient(white, black); /* Optional if it needs blending */
+}
+
+/* Decoratives */
+.deco-sun {
+  position: absolute;
+  top: -40px;
+  left: -80px;
+  z-index: 2;
+}
+
+.deco-text-bubble {
+  position: absolute;
+  top: -10px;
+  right: -60px;
+  z-index: 10;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #1e293b;
+  transform: rotate(5deg);
+}
+.highlight-text {
+  color: #3b82f6;
+}
+
+.deco-leaves {
+  position: absolute;
+  bottom: 20px;
+  left: -40px;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+.leaf-1 { transform: rotate(-30deg); }
+.leaf-2 { transform: rotate(10deg); margin-bottom: 10px; }
+
+/* CSS Owl */
+.deco-owl {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: 10;
+  width: 100px;
+  height: 110px;
+  background-color: #3b82f6;
+  border-radius: 50px 50px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.owl-eyes {
+  display: flex;
+  gap: 8px;
+  margin-top: -10px;
+}
+
+.owl-eye {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.owl-pupil {
+  width: 12px;
+  height: 12px;
+  background: #1e293b;
+  border-radius: 50%;
+}
+
+.owl-beak {
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #f59e0b;
+  margin-top: 8px;
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-text-col {
+    align-items: center;
+  }
+  .hero-desc {
+    max-width: 100%;
+  }
+  .deco-sun, .deco-text-bubble, .deco-owl {
+    display: none; /* Hide decor on small screens for cleaner look */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 40px 20px;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  .hero-image-wrapper {
+    height: 300px;
+    max-width: 300px;
+  }
+}

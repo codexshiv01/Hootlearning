@@ -1,0 +1,129 @@
+/* ===== KIDS NAVBAR ===== */
+.navbar-fun {
+  position: sticky;
+  top: 16px;
+  z-index: 300;
+  margin-inline: 16px;
+  background: var(--bg-surface);
+  border: var(--border-thick);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-bouncy);
+  transition: all 0.3s;
+}
+
+.nav-fun-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 16px;
+}
+
+/* Brand */
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-logo-link:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+.nav-logo-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 3px solid var(--text-dark);
+  object-fit: cover;
+}
+.nav-brand-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-shadow: 2px 2px 0 var(--text-dark);
+  letter-spacing: 1px;
+}
+
+/* Links */
+.nav-fun-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-fun-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 3px solid transparent;
+  transition: all 0.2s;
+}
+.nav-fun-link:hover {
+  background: var(--bg-sky);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+.nav-icon {
+  font-size: 1.5rem;
+}
+
+/* Actions */
+.nav-fun-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-fun-sm {
+  font-size: 1.1rem;
+  padding: 10px 24px;
+  border-radius: 100px;
+  letter-spacing: 1px;
+}
+
+/* Hamburger */
+.hamburger-fun {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  background: var(--color-yellow);
+  border: 3px solid var(--text-dark);
+  border-radius: 12px;
+  box-shadow: 0 4px 0 var(--text-dark);
+  cursor: pointer;
+}
+.hamburger-fun:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+.hamburger-fun span {
+  display: block;
+  width: 24px;
+  height: 4px;
+  background: var(--text-dark);
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .nav-fun-links {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0; right: 0;
+    background: var(--bg-surface);
+    border: var(--border-thick);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-bouncy);
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+  }
+  .nav-fun-links.open { display: flex; }
+  .hamburger-fun { display: flex; }
+}

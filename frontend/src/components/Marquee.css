@@ -1,0 +1,93 @@
+/* ===== KIDS MARQUEE ===== */
+.mq-fun-section {
+  padding: 80px 0;
+  background: var(--bg-pink);
+  border-top: var(--border-thick);
+  border-bottom: var(--border-thick);
+  overflow: hidden;
+}
+
+.mq-fun-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mq-fun-track-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.mq-fun-track {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  animation: marqueeFun 30s linear infinite;
+  padding: 16px 0; /* for hover shadows */
+}
+
+.mq-fun-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeFun {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.33%); } /* Since we repeated 3 times */
+}
+
+/* Book Card */
+.mq-fun-card {
+  width: 240px;
+  height: 300px;
+  border-radius: 20px 40px 40px 20px; /* Book shape */
+  border: var(--border-thick);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+  padding: 24px;
+  box-shadow: 8px 8px 0 var(--text-dark);
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.mq-fun-card::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 16px;
+  width: 4px;
+  background: rgba(0,0,0,0.1);
+}
+
+.mq-fun-card:hover {
+  transform: translateY(-8px) rotate(2deg) scale(1.05);
+}
+
+.mq-fun-icon {
+  font-size: 5rem;
+  background: white;
+  width: 120px; height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 4px dashed var(--text-dark);
+}
+
+.mq-fun-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 0 var(--text-dark);
+  line-height: 1.2;
+}
+
+/* Colors */
+.mq-pink { background: var(--color-pink); }
+.mq-blue { background: var(--color-primary); }
+.mq-green { background: var(--color-green); }
+.mq-yellow { background: var(--color-yellow); }
+.mq-purple { background: var(--color-purple); }
+.mq-red { background: var(--color-red); }

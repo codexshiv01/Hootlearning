@@ -1,0 +1,135 @@
+/* ===== RESOURCE GRID ===== */
+.rg-empty {
+  text-align: center;
+  padding: 60px;
+  color: #64748b;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: white;
+  border-radius: 20px;
+  border: 1px dashed #cbd5e1;
+}
+
+.rg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+.rg-card {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+}
+
+.rg-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  border-color: #e0e7ff;
+}
+
+.rg-cover {
+  height: 260px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.rg-spine {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; width: 12px;
+  background: rgba(0,0,0,0.15);
+}
+
+.rg-icon {
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.rg-card:hover .rg-icon {
+  transform: scale(1.15);
+}
+
+.rg-info {
+  padding: 24px 20px;
+}
+
+.rg-cat {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.rg-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.rg-action {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4338ca;
+}
+
+/* Cover Gradients */
+.gradient-blue { background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%); }
+.gradient-teal { background: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%); }
+.gradient-green { background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%); }
+.default-bg { background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%); }
+.gradient-purple { background: linear-gradient(135deg, #A855F7 0%, #9333EA 100%); }
+.gradient-indigo { background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%); }
+.gradient-red { background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%); }
+.gradient-rose { background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%); }
+.gradient-yellow { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); }
+.gradient-orange { background: linear-gradient(135deg, #F97316 0%, #EA580C 100%); }
+
+.rg-pdf-preview {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rg-pdf-preview .react-pdf__Page__canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 24px 24px 0 0;
+}
+
+@media (max-width: 768px) {
+  .rg-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+  }
+  .rg-cover {
+    height: 180px;
+  }
+  .rg-info {
+    padding: 16px 12px;
+  }
+  .rg-title {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+  .rg-cat {
+    font-size: 0.65rem;
+  }
+  .rg-action {
+    font-size: 0.8rem;
+  }
+}

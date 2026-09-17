@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS — Kids Playful Theme (Ages 3-6)
+   ============================================================ */
+:root {
+  /* Bright, Dopamine Backgrounds */
+  --bg-sky:        #E0F2FE;   /* light blue sky */
+  --bg-sunny:      #FEF08A;   /* soft yellow */
+  --bg-surface:    #FFFFFF;
+  --bg-pink:       #FCE7F3;   /* soft pink */
+
+  /* Vibrant Accents */
+  --color-primary: #3B82F6;   /* Bright blue */
+  --color-purple:  #A855F7;   /* Fun purple */
+  --color-pink:    #EC4899;   /* Hot pink */
+  --color-yellow:  #F59E0B;   /* Golden yellow */
+  --color-green:   #22C55E;   /* Grass green */
+  --color-red:     #EF4444;   /* Apple red */
+
+  /* Neutrals for text */
+  --text-dark:     #1E293B;
+  --text-muted:    #475569;
+
+  /* Playful Borders and Shadows */
+  --border-thick:  4px solid var(--text-dark);
+  --border-radius: 24px;
+  --shadow-bouncy: 0 8px 0 var(--text-dark);
+  --shadow-hover:  0 4px 0 var(--text-dark);
+  --shadow-glow:   0 0 20px rgba(255,255,255,0.8);
+
+  /* Typography */
+  --font-fun:      'Fredoka', sans-serif;
+
+  /* Layout */
+  --max-w: 1200px;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-fun);
+  background-color: #f8fafc;
+  color: var(--text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; outline: none; }
+img { display: block; max-width: 100%; }
+
+/* ============================================================
+   LAYOUT UTILITY
+   ============================================================ */
+.container {
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ============================================================
+   BOUNCY BUTTONS
+   ============================================================ */
+.btn-fun {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 16px 32px;
+  border-radius: 100px;
+  border: var(--border-thick);
+  background: var(--color-yellow);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-bouncy);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-fun:hover {
+  transform: translateY(4px);
+  box-shadow: var(--shadow-hover);
+  background: #FBBF24;
+}
+
+.btn-fun:active {
+  transform: translateY(8px);
+  box-shadow: none;
+}
+
+.btn-fun-pink {
+  background: var(--color-pink);
+  color: white;
+}
+.btn-fun-pink:hover { background: #F472B6; }
+
+.btn-fun-blue {
+  background: var(--color-primary);
+  color: white;
+}
+.btn-fun-blue:hover { background: #60A5FA; }
+
+/* ============================================================
+   SECTION HEADINGS
+   ============================================================ */
+.section-heading-fun {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
+}
+.section-sub-fun {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 16px;
+  max-width: 600px;
+  background: rgba(255,255,255,0.7);
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: 2px dashed var(--color-primary);
+}
