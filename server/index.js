@@ -206,6 +206,11 @@ const optionalUser = async (req, res, next) => {
   }
 };
 
+// --- HEALTH CHECK ---
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'OK', timestamp: new Date() });
+});
+
 // --- 3. STRUCTURE ROUTES (CATEGORIES & FOLDERS) ---
 
 // Get all categories
