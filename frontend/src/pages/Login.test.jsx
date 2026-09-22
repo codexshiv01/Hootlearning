@@ -18,7 +18,7 @@ describe('Student Login Page', () => {
         <Login />
       </BrowserRouter>
     );
-    expect(screen.getByText('Student Portal')).toBeInTheDocument();
+    expect(screen.getByText('Teachers Portal')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Enter your email')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Enter your password')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /sign in/i })).toBeInTheDocument();

@@ -46,7 +46,7 @@ const Login = () => {
       <div className="login-box">
         <div className="login-header">
           <img src="/logo.jpeg" alt="HOOT Logo" className="login-logo" />
-          <h2>Student Portal</h2>
+          <h2>Teachers Portal</h2>
           <p>Sign in to access your learning resources.</p>
         </div>
 
