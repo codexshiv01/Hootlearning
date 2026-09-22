@@ -47,8 +47,8 @@ const CoreValues = () => {
         >
           {/* Using a placeholder for the kids image, user can replace this with actual asset later */}
           <img 
-            src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-            alt="Children learning together" 
+            src="/assets/sketch_mountains.jpg" 
+            alt="Mountain sketch illustration" 
             className="values-img" 
           />
         </motion.div>

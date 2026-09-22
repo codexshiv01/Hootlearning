@@ -31,6 +31,10 @@ const Dashboard = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('userToken');
+    if (!token) {
+      navigate('/login?redirect=/dashboard');
+      return;
+    }
 
     // Fetch live resources
     const fetchLiveResources = async () => {
@@ -81,6 +85,8 @@ const Dashboard = () => {
     fetchLiveResources();
 
     // Global Anti-Piracy logic
+    if (import.meta.env.DEV) return;
+
     const handleKeyDown = (e) => {
       if ((e.ctrlKey || e.metaKey) && ['p', 's', 'c'].includes(e.key.toLowerCase())) {
         e.preventDefault();
@@ -164,11 +170,9 @@ const Dashboard = () => {
       return;
     }
     
-    // If we have a token but fileUrl is missing, the token might be expired on the server.
+    // If fileUrl is missing, it means the admin hasn't uploaded a file for this resource yet.
     if (!res.fileUrl) {
-      alert("Session expired or file is missing. Redirecting to login...");
-      localStorage.removeItem('userToken');
-      navigate('/login?redirect=/dashboard');
+      alert("This resource is not available yet (file missing).");
       return;
     }
 

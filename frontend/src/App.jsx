@@ -19,11 +19,11 @@ const Homepage = () => (
     <NewNavbar />
     <main>
       <HeroSection />
+      <FounderSection />
       <SpecialFeatures />
       <CoreValues />
       <HootPrograms />
       <AboutSection />
-      <FounderSection />
     </main>
     <Footer />
   </>

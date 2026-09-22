@@ -28,11 +28,11 @@ const ResourceGrid = ({ resources, onOpen }) => {
       {resources.map((res) => {
         const action = getActionDetails(res.actionType);
         const hasPdfPreview = res.fileUrl && res.actionType !== 'video';
-        const isLocked = !res.fileUrl;
+        const isMissing = !res.fileUrl;
 
-        const actionLabel = isLocked ? (
-          <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#ef4444', fontWeight: '600' }}>
-            <Lock size={14} /> Login to Access
+        const actionLabel = isMissing ? (
+          <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#94a3b8', fontWeight: '600' }}>
+            <FileText size={14} /> Coming Soon
           </span>
         ) : action.label;
 
@@ -62,12 +62,12 @@ const ResourceGrid = ({ resources, onOpen }) => {
                   onContextMenu={(e) => e.preventDefault()}
                 />
               )}
-              {isLocked && (
+              {isMissing && (
                 <>
                   <span className="rg-spine" />
                   {action.icon}
                   <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(15, 23, 42, 0.75)', padding: '8px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', backdropFilter: 'blur(4px)' }}>
-                    <Lock size={18} />
+                    <FileText size={18} />
                   </div>
                 </>
               )}

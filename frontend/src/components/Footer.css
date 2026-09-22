@@ -1,7 +1,7 @@
 .footer-container {
   padding: 40px;
   background-color: #ffffff;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid rgba(0,0,0,0.04);
 }
 
 .footer-content {
@@ -27,7 +27,7 @@
 
 .footer-copyright {
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: #a8a29e;
 }
 
 .footer-center {
@@ -48,14 +48,14 @@
 
 .footer-links a {
   text-decoration: none;
-  color: #475569;
+  color: #44403c;
   font-size: 0.9rem;
   font-weight: 600;
   transition: color 0.2s;
 }
 
 .footer-links a:hover {
-  color: #3b82f6;
+  color: #0f766e;
 }
 
 .footer-right {
@@ -85,14 +85,14 @@
   transform: translateY(-2px);
 }
 
-.fb { background-color: #3b5998; }
-.ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-.yt { background-color: #ff0000; }
-.in { background-color: #007bb5; }
+.fb { background-color: #27272a; }
+.ig { background: #27272a; }
+.yt { background-color: #27272a; }
+.in { background-color: #27272a; }
 
 .footer-slogan {
   font-size: 0.8rem;
-  color: #64748b;
+  color: #78716c;
   font-weight: 500;
 }
 
