@@ -85,8 +85,6 @@ const Dashboard = () => {
     fetchLiveResources();
 
     // Global Anti-Piracy logic
-    if (import.meta.env.DEV) return;
-
     const handleKeyDown = (e) => {
       if ((e.ctrlKey || e.metaKey) && ['p', 's', 'c'].includes(e.key.toLowerCase())) {
         e.preventDefault();
